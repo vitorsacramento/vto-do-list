@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.logo {
+    width: 120px;
+}
+
+.social > a {
+    padding-left: 20px;
+    color: #fff;
+}
+
+.social > a:hover {
+    transition: .3s all;
+    color: rgba(255, 255, 255, .5);
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 80px;
+    }
+
+    .social {
+        font-size: 1.5rem;
+    }
+
+    .social > a {
+        padding-left: 10px;
+    }
+}
