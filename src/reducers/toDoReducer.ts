@@ -1,11 +1,11 @@
 import { useReducer } from "react"
-import { Action } from "../Models/Action";
+import { listActionType } from "../Models/ListActionType";
 import { Task } from "../Models/Task";
 import { v4 as uuid } from 'uuid';
 
 const initialState: Task[] = [];
 
-const reducer = (state: Task[], action: Action) => {
+const reducer = (state: Task[], action: listActionType) => {
     switch (action.type) {
         case 'ADD':
             if (action.payload?.name) {
@@ -16,10 +16,10 @@ const reducer = (state: Task[], action: Action) => {
             }
         case 'DEL':
             if(action.payload?.id) {
-                state = state.filter(item => item.id !== action.payload?.id);
-            }   
+                state = state.filter(item => item.id !== action.payload?.id); 
+            }
         case 'ORDER':
-            state = state.sort((a, b) => (a.name > b.name) ? 1 : -1);     
+            state = state.sort((a, b) => (a.name > b.name) ? 1 : -1);              
     }
 
     return state;

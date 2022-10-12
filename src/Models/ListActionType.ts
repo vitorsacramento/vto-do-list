@@ -1,4 +1,4 @@
-export type Action = {
+export type listActionType = {
     type: string;
     payload?: {
         id?: string;

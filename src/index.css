@@ -18,3 +18,22 @@ img {
   max-width: 100%;
 }
 
+:root {
+  /* COLORS */
+  --primary-color: #0ea59b;
+  --secondary-color: #fff;
+  --background-color-opacity: rgba(255, 255, 255, .05);
+  --border-color: thin solid rgba(255, 255, 255, .5);
+
+  /* MARGIN */
+  --margin: 10px;
+
+  /* BORDER */
+  --border-radius: 5px;
+  
+  /* TEXT */
+  --title-size: 1.2rem;
+  --text-size: 1rem;
+  --label-text-size: .9rem;
+}
+
