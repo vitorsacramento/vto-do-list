@@ -9,11 +9,15 @@ const reducer = (state: Task[], action: listActionType) => {
     switch (action.type) {
         case 'ADD':
             if (action.payload?.title && action.payload?.description) {
-                state.push({
+                const newState = [...state];
+                newState.push({
                     id: uuid(),
                     title: action.payload?.title,
-                    description: action.payload?.description
+                    description: action.payload?.description,
+                    data: new Date()
                 })
+
+                return newState;
             }
         case 'DEL':
             if(action.payload?.id) {

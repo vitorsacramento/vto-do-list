@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin-bottom: var(--margin);
+    margin: 5px;
     padding: var(--margin);
     border-radius: var(--border-radius);
     background-color: var(--background-color-opacity);

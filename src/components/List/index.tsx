@@ -21,7 +21,7 @@ export const List = () => {
             type: 'ADD',
             payload: {
                 title: title,
-                description: description
+                description: description,
             }
         });
     }

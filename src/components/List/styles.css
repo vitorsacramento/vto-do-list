@@ -86,7 +86,7 @@ label {
 .list {
     display: flex;
     margin: var(--margin) 0;
-    padding: var(--margin);
+    padding: 5px;
     border-radius: var(--border-radius);
     background-color: var(--background-color-opacity);
 }
