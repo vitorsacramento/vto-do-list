@@ -7,7 +7,7 @@
 .insert-task {
     display: flex;
     flex-direction: column;
-    height: 215px;
+    height: 230px;
     padding: var(--margin);
     border-radius: var(--border-radius);
     background-color: var(--background-color-opacity);
@@ -26,7 +26,7 @@
 .input-task {
     width: 100%;
     margin: 20px 0 var(--margin) 0;
-    padding: 10px 0 0 0;
+    padding: 10px 0;
     border: none;
     border-bottom: var(--border-color);
     font-size: var(--text-size);
@@ -35,7 +35,20 @@
     color: var(--secondary-color);
 }
 
-.input-task:focus {
+textarea {
+    width: 100%;
+    margin: 30px 0 var(--margin) 0;
+    border: none;
+    border-bottom: var(--border-color);
+    font-size: var(--text-size);
+    background-color: transparent;
+    text-transform: lowercase;
+    color: var(--secondary-color);
+    resize: none;
+}
+
+.input-task:focus,
+textarea:focus {
     outline: none;
 }
 
@@ -47,10 +60,18 @@
 }
 
 #title:focus+label,
-#title:not(:placeholder-shown)+label,
+#title:not(:placeholder-shown)+label {
+    margin-top: var(--margin);
+    font-size: .8rem;
+    transition: .2s all;
+    color: var(--primary-color);
+    opacity: 1;
+    font-weight: bold;
+}
+
 #description:focus+label,
 #description:not(:placeholder-shown)+label {
-    margin-top: var(--margin);
+    margin-top: 10px;
     font-size: .8rem;
     transition: .2s all;
     color: var(--primary-color);

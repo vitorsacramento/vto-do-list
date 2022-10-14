@@ -14,7 +14,7 @@ export const List = () => {
         setTitle(event.target.value);
     }
 
-    const handleGetDescription = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleGetDescription = (event: ChangeEvent<HTMLTextAreaElement>) => {
         setDescription(event.target.value);
     }
 
@@ -45,13 +45,11 @@ export const List = () => {
                 </div>
 
                 <div className="input-control">
-                    <input
-                        type="text"
-                        className="input-task"
+                    <textarea
                         id="description"
                         placeholder=" "
-                        onChange={handleGetDescription}
-                    />
+                        onChange={handleGetDescription}>
+                    </textarea>
                     <label htmlFor="description">Descrição</label>
                 </div>
 
