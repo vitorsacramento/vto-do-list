@@ -8,10 +8,11 @@ const initialState: Task[] = [];
 const reducer = (state: Task[], action: listActionType) => {
     switch (action.type) {
         case 'ADD':
-            if (action.payload?.name) {
+            if (action.payload?.title && action.payload?.description) {
                 state.push({
                     id: uuid(),
-                    name: action.payload?.name
+                    title: action.payload?.title,
+                    description: action.payload?.description
                 })
             }
         case 'DEL':
@@ -19,7 +20,7 @@ const reducer = (state: Task[], action: listActionType) => {
                 state = state.filter(item => item.id !== action.payload?.id); 
             }
         case 'ORDER':
-            state = state.sort((a, b) => (a.name > b.name) ? 1 : -1);              
+            state = state.sort((a, b) => (a.title > b.title) ? 1 : -1);              
     }
 
     return state;

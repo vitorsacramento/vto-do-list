@@ -1,0 +1,71 @@
+.list-item {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: var(--margin);
+    padding: var(--margin);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-opacity);
+}
+
+.list-item-title {
+    display: flex;
+    width: 100%;
+}
+
+.list-item-title > h2 {
+    width: 100%;
+    padding: 0 0 var(--margin) 0;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.list-item-title > p {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 4px;
+    font-size: .6rem;
+    color: var(--primary-color);
+}
+
+.list-item-description {
+    display: flex;
+    width: 100%;
+    margin-bottom: var(--margin);
+    padding: var(--margin) 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+}
+
+.list-item-description > p {
+    font-size: .875rem;
+    line-height: 21px;
+}
+
+.list-item-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: var(--margin 0);
+}
+
+.btn {
+    border: none;
+    font-size: var(--title-size);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn:nth-child(1) {
+    margin: 0 var(--margin) 0 0;
+    color: var(--primary-color)
+}
+
+.btn:nth-child(2) {
+    color: red;
+}

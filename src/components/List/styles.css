@@ -5,8 +5,9 @@
 }
 
 .insert-task {
-    display: grid;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 215px;
     padding: var(--margin);
     border-radius: var(--border-radius);
     background-color: var(--background-color-opacity);
@@ -90,65 +91,13 @@ label {
     background-color: var(--background-color-opacity);
 }
 
+.list > ul {
+    width: 100%;
+}
+
 .list-box {
     width: 100%;
-}
-
-.list-item {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: var(--margin);
-    border-radius: var(--border-radius);
-    background-color: var(--background-color-opacity);
-}
-
-.list-item-title {
-    display: flex;
-    width: 100%;
-}
-
-.list-item-title > h2 {
-    width: 100%;
-    padding: 0 0 var(--margin) 0;
-    font-size: 1rem;
-}
-
-.list-item-title > p {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding-top: 4px;
-    font-size: .6rem;
-    color: var(--primary-color);
-}
-
-.list-item-description {
-    display: flex;
-    width: 100%;
-    padding: var(--margin) 0;
-}
-
-.list-item-buttons {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding: var(--margin 0);
-}
-
-.list-item-buttons > button {
-    border: none;
-    font-size: var(--title-size);
-    background-color: transparent;
-}
-
-.list-item-buttons > button:nth-child(1) {
-    margin: 0 5px 0 0;
-    color: var(--primary-color)
-}
-
-.list-item-buttons > button:nth-child(2) {
-    color: red;
+    height: auto;
 }
 
 @media screen and (min-width: 768px) {
