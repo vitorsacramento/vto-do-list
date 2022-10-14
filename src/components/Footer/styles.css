@@ -1,0 +1,48 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--margin) 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+footer > h2 {
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+    color: var(--primary-color);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0 0 0;
+}
+
+.social > a {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.social > a:hover {
+    transition: .3s all;
+    color: rgba(255, 255, 255, .05);
+}
+
+@media screen and (max-width: 600px) {
+    .social {
+        font-size: 1.5rem;
+    }
+
+    .social > a {
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .social > a {
+        padding-left: 10px;
+    }
+}
+    

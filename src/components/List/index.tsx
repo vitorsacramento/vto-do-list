@@ -1,6 +1,8 @@
 import { ChangeEvent, useState } from 'react';
 import { useToDoReducer } from '../../reducers/toDoReducer';
 import { ListItem } from './ListItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './styles.css';
 
 export const List = () => {
@@ -54,11 +56,16 @@ export const List = () => {
                 </div>
 
                 <div className="input-control">
-                    <button className="btn-addTask" onClick={handleAddTask}>Adicionar Tarefa</button>
+                    <button className="btn-addTask" onClick={handleAddTask}>Adicionar Tarefa
+                        <FontAwesomeIcon icon={faPlus} />
+                    </button>
                 </div>
             </div>
 
             <div className="list">
+                {listState.length == 0 &&
+                    <div className="no-tasks">Nenhuma tarefa ainda!</div>
+                }
                 <ul>
                     {listState.map((item, index) => (
                         <li className="list-item" key={index}>

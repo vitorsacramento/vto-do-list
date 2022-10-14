@@ -18,6 +18,12 @@ img {
   max-width: 100%;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 :root {
   /* COLORS */
   --primary-color: #0ea59b;
