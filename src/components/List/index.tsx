@@ -19,6 +19,11 @@ export const List = () => {
     }
 
     const handleAddTask = () => {
+        if(title && description) {
+            setTitle('');
+            setDescription('');
+        }
+
         listDispatch({
             type: 'ADD',
             payload: {
@@ -44,8 +49,8 @@ export const List = () => {
                         type="text"
                         className="input-task"
                         id="title"
+                        value={title}
                         placeholder=" "
-                        maxLength={15}
                         onChange={handleGetTitle}
                     />
                     <label htmlFor="titulo">Título</label>
@@ -54,6 +59,7 @@ export const List = () => {
                 <div className="input-control">
                     <textarea
                         id="description"
+                        value={description}
                         placeholder=" "
                         onChange={handleGetDescription}>
                     </textarea>
