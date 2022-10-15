@@ -2,6 +2,7 @@ import { useReducer } from "react"
 import { listActionType } from "../Models/ListActionType";
 import { Task } from "../Models/Task";
 import { v4 as uuid } from 'uuid';
+import { getLocalStorage } from "../localStorage/localStorage";
 
 const initialState: Task[] = [];
 
@@ -34,5 +35,5 @@ const reducer = (state: Task[], action: listActionType) => {
 }
 
 export const useToDoReducer = () => {
-    return useReducer(reducer, initialState);
+    return useReducer(reducer, initialState, getLocalStorage);
 }

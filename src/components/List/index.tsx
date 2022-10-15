@@ -1,14 +1,19 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useToDoReducer } from '../../reducers/toDoReducer';
 import { ListItem } from './ListItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { setLocalStorage } from '../../localStorage/localStorage';
 import './styles.css';
 
 export const List = () => {
     const [listState, listDispatch] = useToDoReducer();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+
+    useEffect(() => {
+        setLocalStorage(listState);
+    }, [listState]);
 
     const handleGetTitle = (event: ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value);
@@ -45,24 +50,12 @@ export const List = () => {
             <div className="insert-task">
                 <h2>Nova tarefa:</h2>
                 <div className="input-control">
-                    <input
-                        type="text"
-                        className="input-task"
-                        id="title"
-                        value={title}
-                        placeholder=" "
-                        onChange={handleGetTitle}
-                    />
+                    <input type="text" className="input-task" id="title" value={title} placeholder=" " onChange={handleGetTitle} />
                     <label htmlFor="titulo">Título</label>
                 </div>
 
                 <div className="input-control">
-                    <textarea
-                        id="description"
-                        value={description}
-                        placeholder=" "
-                        onChange={handleGetDescription}>
-                    </textarea>
+                    <textarea id="description" value={description} placeholder=" " onChange={handleGetDescription}></textarea>
                     <label htmlFor="description">Descrição</label>
                 </div>
 
