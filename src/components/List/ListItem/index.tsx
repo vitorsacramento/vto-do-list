@@ -7,9 +7,10 @@ import { formatDate } from '../../../Utils/utils';
 
 type ListItemProps = {
     task: Task;
+    onDelete: () => void;
 }
 
-export const ListItem = ({ task }: ListItemProps) => {
+export const ListItem = ({ task, onDelete }: ListItemProps) => {
 
     return (
         <>
@@ -24,7 +25,7 @@ export const ListItem = ({ task }: ListItemProps) => {
                 <button className="btn">
                     <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
                 </button>
-                <button className="btn">
+                <button className="btn" onClick={onDelete}>
                     <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
                 </button>
             </div>

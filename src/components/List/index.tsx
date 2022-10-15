@@ -28,6 +28,13 @@ export const List = () => {
         });
     }
 
+    const handleDeleteTask = (id: string) => {
+        listDispatch({
+            type: 'DEL',
+            payload: { id }
+        });
+    }
+
     return (
         <div className="list-container">
             <div className="insert-task">
@@ -67,7 +74,7 @@ export const List = () => {
                 <ul>
                     {listState.map((item, index) => (
                         <li className="list-item" key={index}>
-                            <ListItem task={item} />
+                            <ListItem task={item} onDelete={() => handleDeleteTask(item.id)} />
                         </li>
                     ))}
                 </ul>

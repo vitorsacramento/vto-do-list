@@ -21,10 +21,13 @@ const reducer = (state: Task[], action: listActionType) => {
             }
         case 'DEL':
             if(action.payload?.id) {
-                state = state.filter(item => item.id !== action.payload?.id); 
+                let newState = [...state];
+                newState = newState.filter(item => item.id !== action.payload?.id); 
+                return newState;
             }
         case 'ORDER':
-            state = state.sort((a, b) => (a.title > b.title) ? 1 : -1);              
+            let newState = [...state];
+            newState = newState.sort((a, b) => (a.title > b.title) ? 1 : -1);              
     }
 
     return state;
